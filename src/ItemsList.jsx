@@ -1,52 +1,68 @@
-import { Button } from '@mui/material';
-import React from 'react';
+import { Button, TextField } from '@mui/material';
+import React, { useState } from 'react';
 import './App.css';
 import "./itemslist.css"
 
-const ItemsList = ({items, deleteitem}) => {
+const ItemsList = ({items, deleteitem,currentId,setList}) => {
 
-  // const [updatedtask,setUpdatedtask]=useState()
-  // const [isUpdateclicked,setIsupdateclicked]=useState(false)
-
+  const [updatedtask,setUpdatedtask]=useState()
+  const [isUpdateclicked,setIsupdateclicked]=useState(false)
+  const [tasktosave,setTasktosave]=useState()
 
   const onDel = (id)=>{
     deleteitem(id)
   }
 
 
-//   const updateTask = ((id,e)=>{
+  const updateTask = ((id,correctedtask)=>{
     
-//     const editedtask = items.filter((singletask)=>{
-//         singletask.id = id
+    var editedtask = items.filter((singletask)=>{
+        if(singletask.id = id){
+          return  { id: singletask.id, value: correctedtask }
+        }
+       
+        setTasktosave(editedtask)
+       
+       
 
-//         setUpdatedtask(e.target.value)
-//     })
-// })
-
-//   const onUpdateClick = ()=>{
-//     setIsupdateclicked(true)
-//   }
-
-
-
-
-
+    })
 
   
+
+   
+})
+
+
+  const onUpdateClick = ()=>{
+    setIsupdateclicked(true)
+  }
+ 
+  const onInputchangeineditform=(e)=>{
+    setUpdatedtask(e.target.value);
+  }
+
 
 
 
   return (
     <div>
-    {items?.map((item)=>{
-       return (<div className='display-items'>
-        <ul>
-        <li className='thetaskparagraph'>{item.value}</li>
-        </ul> 
-        <Button id='deletebutton' variant ="contained" onClick={()=>onDel(item.id)}>Remove</Button>
+    {
+      
+      isUpdateclicked ? 
+     
+      <div className='updatingformcss'>
+      <TextField  variant="outlined" onChange={(e)=>onInputchangeineditform(e)}  value={updatedtask}  />
+      <Button id="deletebutton" onClick={(id)=>updateTask(id,updatedtask)} >Edit</Button>
         </div>
-       
-
+    
+    : items?.map((item)=>{
+       return (<div className='display-items'>
+       <ul>
+        <li className='thetaskparagraph'>{item.value}</li> 
+        </ul>
+        <Button id='updatebutton' variant='contained'  onClick={()=> onUpdateClick()}>Edit</Button>
+        <Button id='deletebutton' variant ="contained" onClick={()=>onDel(item.id)}>Delete</Button>
+        </div>
         )
     })}
     </div>

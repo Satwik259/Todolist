@@ -6,9 +6,13 @@ const AddItem = ({additem}) => {
 
    const [newitem,setNewItem]=useState("");
 
+
    const onInputChange=(event)=>{
     setNewItem(event.target.value);
   }
+
+    // document.cookie()
+
 
    const onAddClick=()=>{
     additem(newitem);
