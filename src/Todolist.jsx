@@ -22,10 +22,10 @@ export const Todolist = () => {
   
     return (
         <div className='main-content'>
-        <Paper className='papcol' elevation={3} >
+        <div className='papcol' elevation={3} >
             <AddItem additem={addItemToList} />
             <ItemsList items={list} deleteitem={deleteItemById} />
-        </Paper>
+        </div>
         </div>
     )
 }
