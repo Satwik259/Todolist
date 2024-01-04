@@ -1,0 +1,32 @@
+.main-container{
+height:100vh;
+width:100vw ;
+background-color: black ;
+font-weight:bold ;
+}
+.header{
+display: flex;
+padding:10px auto ;
+justify-content: center;
+color:  rgba(30, 30, 227, 0.711);
+font-weight:800px ;
+background-color: gold;
+}
+.todo-list{
+height:calc(100vh - 41.5px);
+font-weight:700px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.papcol{
+  background-color:aquamarine;
+  height:300px ;
+  width:290px ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.btn{
+  height: 42px;
+}

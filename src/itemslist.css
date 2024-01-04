@@ -1,0 +1,32 @@
+.display-items{
+    display: flex;
+    margin-top: 0.5rem;
+    width: 50rem;
+    background-color: palevioletred;
+}
+.thetaskparagraph{
+width: 35rem;
+margin-top: 0.4rem;
+margin-left: 1.60rem;
+font-size: 1.32rem;
+}
+.thetaskparagraph::first-letter{
+    font-size: 1.8rem ;
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+}
+#deletebutton{
+    border-radius: 0.50rem;
+    height: 2rem ;
+    width: 2rem;
+    margin-left: 0.50rem;
+    margin-top: 1.5rem;
+    font-size:0.8rem ;
+    background-color: red;
+}
+#updatebutton{
+    height: 2rem ;
+    width: 2rem;
+    margin-top: 1.5rem;
+    font-size:0.8rem ;
+    border-radius: 0.50rem;
+}
