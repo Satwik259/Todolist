@@ -43,7 +43,7 @@ const ItemsList = ({items, deleteitem}) => {
         <ul>
         <li className='thetaskparagraph'>{item.value}</li>
         </ul> 
-        <Button id='deletebutton' variant ="contained" onClick={()=>onDel(item.id)}>Delete</Button>
+        <Button id='deletebutton' variant ="contained" onClick={()=>onDel(item.id)}>Remove</Button>
         </div>
        
 
